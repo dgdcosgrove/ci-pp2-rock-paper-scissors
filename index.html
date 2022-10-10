@@ -8,7 +8,38 @@
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
-    <h1>Hello World!</h1>
+    <header>
+        <h1>Rock Paper Scissors</h1>
+    </header>
+    <section id="game">
+        <h2 id="action-msg">Make your move..</h2>
+        <p id="game-instruction">Choose rock, paper or scissors by clicking on images below</p>
+        <div class="controls">
+            <div class="control" id="rock">
+                <img id="rock-img" src="assets/images/rock.png" alt="closed hand emoji">
+            </div>
+            <div class="control" id="paper">
+                <img id="paper-img" src="assets/images/paper.png" alt="open hand emoji">
+            </div>
+            <div class="control" id="scissors">
+                <img id="scissors-img" src="assets/images/scissors.png" alt="peace hand emoji">
+            </div>
+        </div>
+    </section>
+    <section id="results">
+        <div class="result">
+            <p>Paper covers Rock. You Win!</p>
+        </div>
+        <div class="scores">
+            <div id="player-label" class="label">player</div>
+            <div id="computer-label" class="label">computer</div>
+            <span id="player-score">0</span>:<span id="computer-score">0</span>
+        </div>
+    </section>
+    <footer>
+
+    </footer>
+
     <script src="assets/js/script.js"></script>
 </body>
 </html>
