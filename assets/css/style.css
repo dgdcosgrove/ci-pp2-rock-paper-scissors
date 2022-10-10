@@ -1,5 +1,122 @@
+/* Google fonts link */
+@import url('https://fonts.googleapis.com/css2?family=Silkscreen&display=swap');
+
+/* Set entire page margins and padding to 0, box sizing command instructs browser to account
+for padding and border in elements dimensions */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+
+/* General styling for body of html document */
+body {
+    background-color: #ff10f0;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: 1000;
+}
+
+/* Styling for header */
+header {
+    background-color: #800080;
+    padding: 20px;
+}
+
+header > h1 {
+    color: #ff10f0;
+    text-align: center;
+    font-family: Silkscreen, sans-serif;
+    font-size: 46px;
+}
+
+/* Styling for game area */
+#game {
+    text-align: center;
+    color: #ffffff;
+    text-transform: uppercase;
+    color: #800080;
+}
+
+#game > h2 {
+    font-size: 30px;
+    margin-top: 15px;
+}
+
+#game > p {
+    font-size: 15px;
+}
+
+/* Styling for selection buttons */
+.controls {
+    text-align: center;
+    margin-top: 25px;
+}
+
+.control {
+    display: inline-block;
+    margin: 0 20px;
+    height: 100px;
+}
+
+/* Styling for images inside selection buttons */
+.control-img {
+    border: 5px solid #ffffff;
+    border-radius: 50%;
+    padding: 20px;
+    transition: all 0.7s ease;
+    height: 150px;
+    width: 150px;
+}
+
+.control-img:hover {
+    background-color: #800080;
+}
+
+/* Styling for result message */
+.result {
+    color: #800080;
+    font-size: 25px;
+    margin-top: 15px;
+}
+
+.result > p {
+    text-align: center;
+    text-transform: uppercase;
+}
+
+/* Styling for scoreboard */
+.scores {
+    background-color: #800080;
+    margin: 20px auto;
+    border: 3px solid #ffffff;
+    border-radius: 5px;
+    width: 200px;
+    color: #ffffff;
+    font-size: 46px;
+    padding: 15px 20px;
+    font-family: Silkscreen, sans-serif;
+    position: relative;
+    text-align: center;
+}
+
+/* Styling for player and computer labels on scoreboard */
+.label {
+    background-color: #800080;
+    color: #ffffff;
+    font-size: 14px;
+    padding: 2px 5px;
+    font-family: 'Courier New', Courier, monospace;
+    border: 2px solid #ffffff;
+}
+
+#player-label {
+    position: absolute;
+    top: 30px;
+    left: -55px;
+}
+
+#computer-label {
+    position: absolute;
+    top: 30px;
+    right: -70px;
 }
