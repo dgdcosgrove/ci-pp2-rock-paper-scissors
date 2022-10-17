@@ -35,6 +35,7 @@ header > h1 {
     color: #ffffff;
     text-transform: uppercase;
     color: #800080;
+    border-top: 2px solid #ffffff;
 }
 
 #game > h2 {
@@ -60,6 +61,7 @@ header > h1 {
 
 /* Styling for images inside selection buttons */
 .control-img {
+    cursor: pointer;
     border: 5px solid #ffffff;
     border-radius: 50%;
     padding: 20px;
