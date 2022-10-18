@@ -2,6 +2,7 @@
 // Get clickable images "buttons" and add event listeners to them
 let player;
 let computer;
+let result = document.getElementById("result-p");
 
 document.addEventListener("DOMContentLoaded", function() {
     let choices = document.getElementsByClassName("control-img");
@@ -9,17 +10,15 @@ document.addEventListener("DOMContentLoaded", function() {
     for (player of choices) {
         player.addEventListener("click", function() {
             if (this.getAttribute("data-type") === "rock") {
-                player="Rock"
-                console.log(player);
+                player = "Rock"
             } else if (this.getAttribute("data-type") === "paper") {
-                player="Paper"
-                console.log(player);
+                player = "Paper"
             } else if (this.getAttribute("data-type") === "scissors") {
-                player="Scissors"
-                console.log(player);
+                player = "Scissors"
             }
             computerChoice();
             checkWinner();
+            
         })
     }
 })
@@ -28,32 +27,45 @@ function computerChoice (){
    let randNumb = Math.floor(Math.random() * 3) + 1;
    if (randNumb === 1) {
         computer = "Rock";
-        console.log(computer);
    } else if (randNumb === 2) {
         computer = "Paper";
-        console.log(computer);
    } else if (randNumb === 3) {
         computer = "Scissors";
-        console.log(computer);
    }
 }
 
 function checkWinner() {
 
     if (player === computer) {
-        console.log("Draw!")
+        result.innerHTML="Same choice made, It's a Draw! &#128529;"
     } else if (player === "Paper" && computer === "Rock") {
-        console.log("You Win!")
+        result.innerHTML="Paper covers Rock, You Win! &#128512;"
+        incrementUser()
     } else if (player === "Rock" && computer === "Scissors") {
-        console.log("You Win!")
+        result.innerHTML="Rock breaks Scissors, You Win! &#128512;"
+        incrementUser()
     } else if (player === "Scissors" && computer === "Paper") {
-        console.log("You Win!")
+        result.innerHTML="Scissors cuts Paper, You Win! &#128512;"
+        incrementUser()
     } else if (player === "Scissors" && computer === "Rock") {
-        console.log("You Lose!")
+        result.innerHTML="Rock breaks Scissors, You Lose! &#128546;"
+        incrementComputer()
     } else if (player === "Paper" && computer === "Scissors") {
-        console.log("You Lose!")
+        result.innerHTML="Scissors cuts Paper, You Lose! &#128546;"
+        incrementComputer()
     } else if (player === "Rock" && computer === "Paper") {
-        console.log("You Lose!")
+        result.innerHTML="Paper covers Rock, You Lose! &#128546;"
+        incrementComputer()
     }
     
+}
+
+function incrementUser() {
+    let playerScore = parseInt(document.getElementById("player-score").innerText);
+    document.getElementById("player-score").innerText = ++playerScore;
+}
+
+function incrementComputer() {
+    let computerScore = parseInt(document.getElementById("computer-score").innerText);
+    document.getElementById("computer-score").innerText = ++computerScore;
 }
