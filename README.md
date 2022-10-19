@@ -1,108 +1,113 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# Rock Paper Scissors
 
-Welcome dgdcosgrove,
+Rock Paper Scissors is a web application aimed at emulating the hand game of the same name loved by all ages. The application will be targeted towards all audiences who are looking to play the game when alone. With my 6 year old daughter (who has recently begun to play the game herself) specifically in mind, the application has been designated a colour scheme to appeal to her, for now.
 
-This is the Code Institute student template for Gitpod. We have preinstalled all of the tools you need to get started. It's perfectly ok to use this template as the basis for your project submissions.
+The user initiates the game by making their choice, in turn the computer makes its choice and the user is notified of the result. A win or a loss results in the scoreboard being adjusted accordingly. Information is presented to the user through text and images which the user will also interact with.
 
-You can safely delete this README.md file, or change it for your own project. Please do read it at least once, though! It contains some important information about Gitpod and the extensions we use. Some of this information has been updated since the video content was created. The last update to this file was: **September 1, 2021**
+In the future it is planned that the application will provide the user with the ability to create their own account, which will contain information such as streaks and futher game history, two-player mode (on-line and off-line). For now this idea has been confirmed as being out of the scope of the current project.
 
-## Gitpod Reminders
+![Responsive Mockup](./assets/images/repsonsive_image.png)
 
-To run a frontend (HTML, CSS, Javascript only) application in Gitpod, in the terminal, type:
+## Features 
 
-`python3 -m http.server`
+### Existing Features
 
-A blue button should appear to click: _Make Public_,
+- __Landing Page__
 
-Another blue button should appear to click: _Open Browser_.
+  - The landing page provides the platform for the entire application. From here the user can view the Header and the Game Area. The user is directed by text cues as to how to play the game.
 
-To run a backend Python file, type `python3 app.py`, if your Python file is named `app.py` of course.
+![Landing Page](./assets/images/landing-page.png)
 
-A blue button should appear to click: _Make Public_,
+- __Header__
 
-Another blue button should appear to click: _Open Browser_.
+  - The header is styled in a consistant fashion across the application. Given the application consists of two pages (one to host the application itself and a 404 page, it was decided that a nav bar was not currently necessary. Nevertheless, it was still a priority to provide a consistant indication of what the application is to the user.
 
-In Gitpod you have superuser security privileges by default. Therefore you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
+![Header](./assets/images/header.png)
 
-To log into the Heroku toolbelt CLI:
+- __Game Area__
 
-1. Log in to your Heroku account and go to *Account Settings* in the menu under your avatar.
-2. Scroll down to the *API Key* and click *Reveal*
-3. Copy the key
-4. In Gitpod, from the terminal, run `heroku_config`
-5. Paste in your API key when asked
+  - The Game Area is a section on the Landing Page and contains all the components for the the game itself. Instructions to the user to commence the game by making a move, clickable images to allow the user to make their selection, a results paragraph to indicate the result, and a scoreboard to keep track of the score and also further indicate the result.
 
-You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you so do not share it. If you accidentally make it public then you can create a new one with _Regenerate API Key_.
+![Game Area](./assets/images/game-area.png)
 
-------
+- __Game Instructons__
 
-## Release History
+  - This area indicates to the user how to proceed via permanent text cues.
 
-We continually tweak and adjust this template to help give you the best experience. Here is the version history:
+![Game Instructions](./assets/images/game-instructions.png)
 
-**September 1 2021:** Remove `PGHOSTADDR` environment variable.
+- __Game Controls__
 
-**July 19 2021:** Remove `font_fix` script now that the terminal font issue is fixed.
+  - Here the user is provided with three images which are clickable. These images are styled with CSS to be familiar as a clickable button, they are rounded, change colour on mouse hover, with a further cue as to their clickable nature being the change of the curser from its default setting of an arrow to a pointer. 
+  
+  - When the user makes their choise of the three available, JavaScript is utilised to convert their choice from HTML to a string, which is then compared to a randomly generated computer choice (a random number between 1-3) which has also been converted to a string to represent the same three choices availables to the user.
 
-**July 2 2021:** Remove extensions that are not available in Open VSX.
+![Game Controls](./assets/images/game-controls.png)
 
-**June 30 2021:** Combined the P4 and P5 templates into one file, added the uptime script. See the FAQ at the end of this file.
+- __Results Paragraph__
 
-**June 10 2021:** Added: `font_fix` script and alias to fix the Terminal font issue
+  - After the comparison is made the result is calculated using a "checkWinner" function which then populates the innerHTML of a paragraph tag directly below the Game Controls. This paragraph contains both text and emoji to convey the result to the user and is not visbile until after the user makes their first choice and the game commences.
 
-**May 10 2021:** Added `heroku_config` script to allow Heroku API key to be stored as an environment variable.
+![Results](./assets/images/result.png)
 
-**April 7 2021:** Upgraded the template for VS Code instead of Theia.
+- __Score Board__
 
-**October 21 2020:** Versions of the HTMLHint, Prettier, Bootstrap4 CDN and Auto Close extensions updated. The Python extension needs to stay the same version for now.
+  - Here the user is provided with the information on their current score vs the computer's score. As the scoreboard updates in real-time this is also a further cue to the user as to the result of their choice.
 
-**October 08 2020:** Additional large Gitpod files (`core.mongo*` and `core.python*`) are now hidden in the Explorer, and have been added to the `.gitignore` by default.
+![Score Board](./assets/images/scores.png)
 
-**September 22 2020:** Gitpod occasionally creates large `core.Microsoft` files. These are now hidden in the Explorer. A `.gitignore` file has been created to make sure these files will not be committed, along with other common files.
+- __404 Page__
 
-**April 16 2020:** The template now automatically installs MySQL instead of relying on the Gitpod MySQL image. The message about a Python linter not being installed has been dealt with, and the set-up files are now hidden in the Gitpod file explorer.
+  - If the user navigates to a page that doesn't exist, they are redirected here. Informing the user that they have not reached their requested page. The user can follow the link to take them back to the applications main page without having to use the browers back button.
 
-**April 13 2020:** Added the _Prettier_ code beautifier extension instead of the code formatter built-in to Gitpod.
+![Score Board](./assets/images/404.png)
 
-**February 2020:** The initialisation files now _do not_ auto-delete. They will remain in your project. You can safely ignore them. They just make sure that your workspace is configured correctly each time you open it. It will also prevent the Gitpod configuration popup from appearing.
+### Features Left to Implement
 
-**December 2019:** Added Eventyret's Bootstrap 4 extension. Type `!bscdn` in a HTML file to add the Bootstrap boilerplate. Check out the <a href="https://github.com/Eventyret/vscode-bcdn" target="_blank">README.md file at the official repo</a> for more options.
+- User Profile (out of scope). In the future it is planned to implement further user functionality in the form of a user profile. This would afford the user the ability to maintain game history such and win/lose ratio, games played and in-game streak data.
 
-------
+- Online Gameplay (out of scope). Given the implementation of a user profile, further functonality could be added to allow the user to play against their friends rather than just the computer. 
 
-## FAQ about the uptime script
+## Testing
 
-**Why have you added this script?**
+- Responsiveness
+  - The site displays as intented on all screens. Tested using Developer Tools in Google Chrome Browser, Safari Browser and at https://ui.dev/amiresponsive
 
-It will help us to calculate how many running workspaces there are at any one time, which greatly helps us with cost and capacity planning. It will help us decide on the future direction of our cloud-based IDE strategy.
+- Features
+  - All of the features are working as intended. Once the page loads, and the user makes their choice, the computer then automatically makes its choice, these choices are then compared and the result in turn is relayed back to the user. The Score Board also is imcrementing as intended. If the user navigates to a page that doesn't exist, they are successfully redirected to a "404.html" error page. The link on this page which brings the user back to the main page is working as intended.
 
-**How will this affect me?**
+### Validator Testing 
 
-For everyday usage of Gitpod, it doesn’t have any effect at all. The script only captures the following data:
+- HTML
+  - No errors were returned when passing through the official [W3C validator](https://validator.w3.org/nu/?doc=https%3A%2F%2Fdgdcosgrove.github.io%2Fci-pp2-rock-paper-scissors%2F)
+- CSS
+  - No errors were found when passing through the official [(Jigsaw) validator](https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fdgdcosgrove.github.io%2Fci-pp2-rock-paper-scissors%2F&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en)
+- JavaScript
+  - Some warnings were found when passing through the JSHint linter
+  ![Score Board](./assets/images/jshint-report.png)
 
-- An ID that is randomly generated each time the workspace is started.
-- The current date and time
-- The workspace status of “started” or “running”, which is sent every 5 minutes.
 
-It is not possible for us or anyone else to trace the random ID back to an individual, and no personal data is being captured. It will not slow down the workspace or affect your work.
+### Unfixed Bugs
 
-**So….?**
+There were no bugs found.
 
-We want to tell you this so that we are being completely transparent about the data we collect and what we do with it.
+## Deployment 
 
-**Can I opt out?**
+- The site was deployed to GitHub pages. The steps to deploy are as follows: 
+  - In the GitHub repository, navigate to the Settings tab 
+  - From here, click on Pages link in left sidebar.
+  - From the source section drop-down menu, select the Main Branch
+  - Once the main branch has been selected, click save and the page will be automatically refreshed with a detailed ribbon display to indicate the successful deployment. 
 
-Yes, you can. Since no personally identifiable information is being captured, we'd appreciate it if you let the script run; however if you are unhappy with the idea, simply run the following commands from the terminal window after creating the workspace, and this will remove the uptime script:
+The live link can be found here - https://dgdcosgrove.github.io/ci-pp2-rock-paper-scissors/
 
-```
-pkill uptime.sh
-rm .vscode/uptime.sh
-```
+## Credits 
 
-**Anything more?**
+### Content 
 
-Yes! We'd strongly encourage you to look at the source code of the `uptime.sh` file so that you know what it's doing. As future software developers, it will be great practice to see how these shell scripts work.
+- The HTML, CSS, JavaScript and text for all pages was written by Daniel Cosgrove.
 
----
+### Media
 
-Happy coding!
+- All images used on this project were sourced from 
+[OpenMoji](https://openmoji.org/) and [W3C Schools](https://www.w3schools.com//)
