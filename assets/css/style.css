@@ -20,6 +20,7 @@ body {
 header {
     background-color: #800080;
     padding: 20px;
+    border-bottom: 2px solid #ffffff;
 }
 
 header > h1 {
@@ -35,7 +36,6 @@ header > h1 {
     color: #ffffff;
     text-transform: uppercase;
     color: #800080;
-    border-top: 2px solid #ffffff;
 }
 
 #game > h2 {
@@ -121,4 +121,39 @@ header > h1 {
     position: absolute;
     top: 30px;
     right: -70px;
+}
+
+#error-section {
+    text-align: center;
+    margin-top: 20px;
+}
+
+#error-section > h2 {
+    font-family: Silkscreen, sans-serif;
+    font-size: 650%;
+    color: #800080
+}
+
+#error-section > p {
+    margin-top: 15px;
+    font-family: 'Courier New', Courier, monospace;
+    color: #ffffff;
+    text-transform: uppercase;
+    font-size: 125%;
+}
+
+#error-section > p > a {
+    color: #ffffff;
+}
+
+.indicate-win {
+    border: 5px solid green;
+}
+
+.indicate-loss {
+    border: 5px solid red;
+}
+
+.indicate-draw {
+    border: 5px solid grey;
 }
